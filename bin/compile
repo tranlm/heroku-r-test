@@ -124,6 +124,7 @@ else
 
   # move the binary dependances to /app/.apt
   # so that R can find them when compiling packages
+  echo "Moving binary"
   mv $VENDOR_DIR/.apt /app
 
 fi
@@ -136,6 +137,7 @@ mv $VENDOR_DIR/R /app/vendor
 # trialed and errored on this; copy over libs to gfortran, so
 # that liblto_plugin.so and others can be found
 # (tried using LDFLAGS, LD_LIBRARY_PATH and LIBRARY_PATH but didn't work)
+mkdir /app/.apt
 mkdir /app/.apt/usr
 mkdir /app/.apt/usr/lib
 mkdir /app/.apt/usr/lib/gcc
