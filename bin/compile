@@ -117,8 +117,8 @@ if [ -d $BUILD_DIR/.apt ]; then
   echo "Merging buildpack .apt files" | indent
   cp -r $VENDOR_DIR/.apt/* /app/.apt
 
-  rm -rf $BUILD_DIR/.apt
-  rm -rf $VENDOR_DIR/.apt
+#  rm -rf $BUILD_DIR/.apt
+#  rm -rf $VENDOR_DIR/.apt
 
 else
 
@@ -132,7 +132,8 @@ fi
 # move the R binaries to /app/vendor/R
 echo "$VENDOR_DIR"
 echo "$(ls $VENDOR_DIR/R)"
-mv $VENDOR_DIR/R /app/vendor
+cp $VENDOR_DIR/R /app/vendor
+echo "$(ls /app/vendor)"
 
 # trialed and errored on this; copy over libs to gfortran, so
 # that liblto_plugin.so and others can be found
