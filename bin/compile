@@ -136,6 +136,7 @@ mv $VENDOR_DIR/R /app/vendor
 # trialed and errored on this; copy over libs to gfortran, so
 # that liblto_plugin.so and others can be found
 # (tried using LDFLAGS, LD_LIBRARY_PATH and LIBRARY_PATH but didn't work)
+mkdir /app/.apt/usr
 mkdir /app/.apt/usr/lib
 mkdir /app/.apt/usr/lib/gcc
 mkdir /app/.apt/usr/lib/gcc/$ARCH
